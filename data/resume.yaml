@@ -52,7 +52,7 @@
         "username": "sushant66"
       }
     ],
-    "summary": "Senior Backend Engineer with 5+ years of experience building 0 to 1 products and scaling distributed systems. Designed and operated microservices handling 100K+ daily transactions and built AI-powered applications using LLMs in production. Strong experience in end-to-end ownership, from architecture design to deployment and scaling.",
+    "summary": "Backend Engineer specializing in distributed systems and AI-driven data pipelines. Built and scaled systems handling 100K+ daily transactions and improved application performance by up to 90%. Experienced in event-driven architectures, high-throughput backend systems, and production-grade LLM pipelines.",
     "website": "https://github.com/sushant66"
   },
   "education": [
@@ -83,14 +83,11 @@
     {
       "alternate_names": ["Senior Backend Engineer", "Backend Engineer", "AI Engineer"],
       "bullets": [
-        "Built and scaled microservices-based backend systems, improving modularity and enabling faster feature development.",
-        "Built scalable data ingestion pipelines using Python and Scrapy, automating manufacturer onboarding and eliminating manual workflows.",
-        "Optimized frontend-backend data flow and caching mechanisms, reducing page load time by **90%**.",
-        "Designed state-based workflow orchestration for dependent tasks, reducing development-to-production cycle time by **50%**.",
-        "Built an **LLM-powered** Reddit analysis platform using async pipelines, processing **10K+ posts/day** and generating actionable insights.",
-        "Designed and productionized an AI-based diagram generation SaaS, enabling automated diagram creation at scale.",
-        "Improved reliability of AI-generated outputs by optimizing LLM orchestration and backend pipelines.",
-        "Delivered an AI-assisted internal POC in **2 weeks**, accelerating development timelines significantly."
+        "Reduced page load time by **90%** by optimizing backend data flow and caching strategies.",
+        "Automated manufacturer onboarding by building Python-based ingestion pipelines, eliminating manual workflows.",
+        "Built async pipelines processing **10K+ posts/day** for **LLM-based** Reddit analysis and insight generation.",
+        "Designed workflow orchestration system, reducing development-to-production cycle time by **50%**.",
+        "Built and productionized an AI diagram generation SaaS, improving reliability of LLM outputs through orchestration and failure handling."
       ],
       "company": "EDRA LABS (BrowserStack Company)",
       "end_date": null,
@@ -109,11 +106,11 @@
     {
       "alternate_names": ["Software Development Engineer", "Backend Engineer"],
       "bullets": [
-        "Developed backend services for an Order Management System handling **100K+ daily orders** and **200K+ peak traffic**.",
-        "Built distributed read/write microservices, improving system reliability and reducing latency in order processing.",
+        "Built backend services for an Order Management System handling **100K+ daily orders** and **200K+ peak traffic**.",
+        "Reduced latency and improved system reliability by designing distributed read/write microservices.",
         "Designed **event-driven architecture** for order lifecycle management, ensuring high availability during peak load.",
-        "Built return quality check workflows, reducing fraudulent returns by **20%**.",
-        "Implemented Buy Online Pickup In Store (BOPIS) workflows, reducing delivery costs and improving fulfillment efficiency."
+        "Reduced fraudulent returns by **20%** by implementing return quality-check workflows.",
+        "Enabled Buy Online Pickup In Store (BOPIS) workflows, reducing delivery costs and improving fulfillment efficiency."
       ],
       "company": "FYND (Jio)",
       "end_date": "2024-09",
@@ -132,10 +129,10 @@
     {
       "alternate_names": ["Product Engineer", "Backend Engineer"],
       "bullets": [
-        "Built backend services for an Intelligent Document Processing platform, improving processing throughput and scalability.",
-        "Developed document parsing and text extraction pipelines integrating OCR systems (Google Vision, AWS Textract, Kofax, Tesseract).",
-        "Designed database schemas and REST APIs supporting high-throughput document workflows.",
-        "Built tabular data extraction module, improving accuracy by **25%** and reducing false positives by **30%**."
+        "Built backend services for a document processing platform, improving throughput and scalability.",
+        "Developed OCR-based pipelines integrating Google Vision, AWS Textract, and Tesseract.",
+        "Improved tabular data extraction accuracy by **25%** and reduced false positives by **30%**.",
+        "Designed REST APIs and database schemas for high-throughput document workflows."
       ],
       "company": "LTIMindtree",
       "end_date": "2023-02",
