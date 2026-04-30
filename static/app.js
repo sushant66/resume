@@ -64,7 +64,7 @@ async function init() {
 }
 
 function wireActions() {
-  elements.saveButton.addEventListener("click", () => submitResume("/api/resume", "Saved to resume.yaml. Click Generate to refresh the preview."));
+  elements.saveButton.addEventListener("click", () => submitResume("/api/resume", "Saved to data/resume.yaml. Click Generate to refresh the preview."));
   elements.generateButton.addEventListener("click", () => submitResume("/api/generate", "Build completed."));
   elements.pushButton.addEventListener("click", pushResume);
 }

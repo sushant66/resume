@@ -4,7 +4,7 @@ This guide is for anyone who wants to update and rebuild this resume without alr
 
 ## What You Edit
 
-The only file you should edit for resume content is [`resume.yaml`](./resume.yaml).
+The only file you should edit for resume content is [`resume.yaml`](./data/resume.yaml).
 
 That file is the single source of truth for:
 
@@ -19,22 +19,22 @@ That file is the single source of truth for:
 
 Do not manually edit these generated files:
 
-- [`sections/header.tex`](./sections/header.tex)
-- [`sections/experience.tex`](./sections/experience.tex)
-- [`sections/skills.tex`](./sections/skills.tex)
-- [`sections/projects.tex`](./sections/projects.tex)
-- [`sections/achievements.tex`](./sections/achievements.tex)
-- [`sections/education.tex`](./sections/education.tex)
-- [`generated/metadata.tex`](./generated/metadata.tex)
-- [`resume.json`](./resume.json)
-- [`schema.json`](./schema.json)
+- [`sections/header.tex`](./tex/sections/header.tex)
+- [`sections/experience.tex`](./tex/sections/experience.tex)
+- [`sections/skills.tex`](./tex/sections/skills.tex)
+- [`sections/projects.tex`](./tex/sections/projects.tex)
+- [`sections/achievements.tex`](./tex/sections/achievements.tex)
+- [`sections/education.tex`](./tex/sections/education.tex)
+- [`generated/metadata.tex`](./tex/generated/metadata.tex)
+- [`resume.json`](./data/resume.json)
+- [`schema.json`](./data/schema.json)
 
 ## Prerequisites
 
 Install these tools first:
 
 - [Docker](https://docs.docker.com/)
-- [yq](https://github.com/mikefarah/yq)
+- [yq](https://github.com/mikefarah/yq) or PyYAML
 - `python3`
 - [uv](https://docs.astral.sh/uv/)
 - optionally: [Git](https://git-scm.com/) for local git-based push
@@ -46,14 +46,14 @@ Check that the required tools are available:
 ```sh
 python3 --version
 uv --version
-yq --version
+python3 scripts/generate_resume.py
 docker --version
 make --version
 ```
 
 ## Editing Resume Content
 
-Open [`resume.yaml`](./resume.yaml) and update the data you want.
+Open [`resume.yaml`](./data/resume.yaml) and update the data you want.
 
 Common sections:
 
@@ -87,7 +87,7 @@ Do not put raw LaTeX like `\textbf{}` or `\href{}` into `resume.yaml`.
 
 ### Recommended command
 
-After editing [`resume.yaml`](./resume.yaml), run:
+After editing [`resume.yaml`](./data/resume.yaml), run:
 
 ```sh
 make compile
@@ -163,7 +163,7 @@ uv run python app.py
 Open `http://127.0.0.1:5000` and use the UI flow:
 
 1. update the schema-driven form
-2. click `Save / Update` to validate and write [`resume.yaml`](./resume.yaml)
+2. click `Save / Update` to validate and write [`resume.yaml`](./data/resume.yaml)
 3. click `Generate` to regenerate artifacts and compile the PDF
 4. review the inline preview and logs
 5. click `Push` to auto-bump the patch version, commit, and push to the current branch
@@ -183,7 +183,7 @@ If the app is running inside a container or on a machine without local git crede
 
 ```sh
 export GITHUB_TOKEN=...
-export GITHUB_OWNER=adityaongit
+export GITHUB_OWNER=sushant66
 export GITHUB_REPO=resume
 export GITHUB_BRANCH=main
 ```
@@ -197,7 +197,7 @@ If these variables are not set, the app will use local git mode instead.
 The generated PDF file is:
 
 ```sh
-Aditya_SWE_Resume_2YOE.pdf
+build/Sushant_Kadam.pdf
 ```
 
 ## Verifying the Output
@@ -205,7 +205,7 @@ Aditya_SWE_Resume_2YOE.pdf
 Check embedded attachments:
 
 ```sh
-pdfdetach -list Aditya_SWE_Resume_2YOE.pdf
+pdfdetach -list build/Sushant_Kadam.pdf
 ```
 
 Expected files:
@@ -216,19 +216,19 @@ Expected files:
 Inspect XMP metadata:
 
 ```sh
-exiftool -xmp:all Aditya_SWE_Resume_2YOE.pdf
+exiftool -xmp:all build/Sushant_Kadam.pdf
 ```
 
 ## Troubleshooting
 
 If `make compile` fails:
 
-- ensure `yq` is installed and available in `PATH`
+- ensure `resume.yaml` is valid JSON/YAML and `yq` or PyYAML is available if you move away from JSON-formatted YAML
 - ensure Docker is running
 - ensure the Docker image builds successfully with `make docker`
-- check for YAML syntax mistakes in [`resume.yaml`](./resume.yaml)
+- check for YAML syntax mistakes in [`resume.yaml`](./data/resume.yaml)
 
-If you changed [`resume.yaml`](./resume.yaml) and the PDF did not update:
+If you changed [`resume.yaml`](./data/resume.yaml) and the PDF did not update:
 
 - rerun `make compile`
 - check whether the generated section files changed
@@ -238,8 +238,8 @@ If you changed [`resume.yaml`](./resume.yaml) and the PDF did not update:
 
 Useful files:
 
-- [`resume.yaml`](./resume.yaml): source of truth
+- [`resume.yaml`](./data/resume.yaml): source of truth
 - [`scripts/generate_resume.py`](./scripts/generate_resume.py): generator
-- [`main.tex`](./main.tex): LaTeX entry point and PDF embedding
-- [`formatting.sty`](./formatting.sty): visual styling
+- [`main.tex`](./tex/main.tex): LaTeX entry point and PDF embedding
+- [`resume.cls`](./tex/resume.cls): visual styling
 - [`README.md`](./README.md): project overview

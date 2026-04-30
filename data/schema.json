@@ -1,0 +1,329 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://github.com/sushant66",
+      "name": "Sushant Kadam",
+      "jobTitle": "Senior Backend Engineer",
+      "email": "kadam.sushant@yahoo.com",
+      "url": "https://github.com/sushant66",
+      "sameAs": [
+        "https://linkedin.com/in/sushant66",
+        "https://github.com/sushant66"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Sardar Patel Institute of Technology (SPIT)"
+      },
+      "knowsAbout": [
+        "Python",
+        "JavaScript",
+        "SQL",
+        "HTML",
+        "CSS",
+        "React",
+        "Vite",
+        "Next JS",
+        "FastAPI",
+        "Flask",
+        "Django",
+        "Node.js",
+        "Kafka",
+        "Redis",
+        "Celery",
+        "RabbitMQ",
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "LangChain",
+        "LangGraph",
+        "RAG",
+        "OpenAI",
+        "Claude",
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "LLMs",
+        "Distributed Systems"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Senior Software Engineer",
+          "alternateName": [
+            "Senior Backend Engineer",
+            "Backend Engineer",
+            "AI Engineer"
+          ],
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Mumbai"
+          },
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": "EDRA LABS (BrowserStack Company)"
+          },
+          "startDate": "2024-10"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Software Development Engineer - 1",
+          "alternateName": [
+            "Software Development Engineer",
+            "Backend Engineer"
+          ],
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Mumbai"
+          },
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": "FYND (Jio)"
+          },
+          "startDate": "2023-03",
+          "endDate": "2024-09"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Senior Product Engineer",
+          "alternateName": [
+            "Product Engineer",
+            "Backend Engineer"
+          ],
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Mumbai"
+          },
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": "LTIMindtree"
+          },
+          "startDate": "2021-06",
+          "endDate": "2023-02"
+        }
+      ],
+      "workExample": [
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Make A Viz - AI Diagram Generation SaaS",
+          "url": "https://makeaviz.com/",
+          "programmingLanguage": [
+            "React",
+            "Vite",
+            "FastAPI",
+            "LangChain",
+            "LLMs",
+            "SigNoz"
+          ]
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "AI Reddit Intelligence Platform",
+          "url": "https://github.com/sushant66",
+          "programmingLanguage": [
+            "Python",
+            "Async",
+            "LLMs",
+            "Data Pipelines"
+          ]
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Havi.ai - AI Slide Generation Platform",
+          "url": "https://www.havi.ai/",
+          "programmingLanguage": [
+            "React",
+            "FastAPI",
+            "LLMs",
+            "Agentic Workflows",
+            "PPTX",
+            "PDF"
+          ]
+        }
+      ],
+      "copyrightYear": 2026,
+      "dateCreated": "2026",
+      "dateModified": "2026",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "Sushant Kadam"
+      },
+      "license": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://github.com/sushant66/resume",
+      "name": "Sushant Kadam - Resume",
+      "alternateName": [
+        "Sushant Kadam - CV",
+        "Sushant Kadam - Curriculum Vitae"
+      ],
+      "about": {
+        "@id": "https://github.com/sushant66"
+      },
+      "hasPart": [
+        {
+          "@type": "ItemList",
+          "name": "Work Experience",
+          "alternateName": [
+            "Experience",
+            "Employment History",
+            "Professional Experience",
+            "Career History"
+          ],
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Senior Software Engineer at EDRA LABS (BrowserStack Company)"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Software Development Engineer - 1 at FYND (Jio)"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Senior Product Engineer at LTIMindtree"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Education",
+          "alternateName": [
+            "Academic Background",
+            "Qualifications",
+            "Academic History"
+          ],
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "B.Tech Electronics Engineering - Sardar Patel Institute of Technology (SPIT)"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Technical Skills",
+          "alternateName": [
+            "Skills",
+            "Core Competencies",
+            "Technologies",
+            "Tech Stack",
+            "Expertise"
+          ],
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Languages: Python, JavaScript, SQL, HTML, CSS"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Frontend: React, Vite, Next JS"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Backend: FastAPI, Flask, Django, Node.js"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Systems: Kafka, Redis, Celery, RabbitMQ"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Cloud: AWS, GCP, Docker, Kubernetes"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "AI/LLM: LangChain, LangGraph, RAG, OpenAI, Claude"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Databases: PostgreSQL, MySQL, MongoDB"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Projects",
+          "alternateName": [
+            "Personal Projects",
+            "Portfolio",
+            "Open Source Work",
+            "Side Projects"
+          ],
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Make A Viz - AI Diagram Generation SaaS"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "AI Reddit Intelligence Platform"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Havi.ai - AI Slide Generation Platform"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "name": "Certifications",
+          "alternateName": [
+            "Certificates",
+            "Professional Certifications",
+            "Credentials"
+          ],
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Python for Everybody Specialization - Coursera",
+              "url": "https://www.coursera.org/account/accomplishments/specialization/FZEBLN392HNZ"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "AWS Certified Cloud Practitioner - Amazon Web Services",
+              "url": "https://www.credly.com/badges/496a3435-e62b-441c-a369-14c773a03e09/public_url"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Cutshort Certified Python - Advanced - Cutshort",
+              "url": "https://cutshort.io/certificate/72378"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Machine Learning - Coursera",
+              "url": "https://www.coursera.org/account/accomplishments/verify/3B2L83GL6TWQ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

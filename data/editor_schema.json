@@ -3,7 +3,7 @@
   "title": "Resume Editor Schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["meta", "basics", "pdf", "skills", "experience", "projects", "education", "achievements", "schema"],
+  "required": ["meta", "basics", "pdf", "skills", "experience", "projects", "education", "achievements", "certifications", "schema"],
   "properties": {
     "meta": {
       "type": "object",
@@ -197,6 +197,20 @@
       "type": "array",
       "title": "Achievements",
       "items": { "type": "string", "title": "Achievement", "x-widget": "textarea" }
+    },
+    "certifications": {
+      "type": "array",
+      "title": "Certifications",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "issuer", "url"],
+        "properties": {
+          "name": { "type": "string", "title": "Name" },
+          "issuer": { "type": "string", "title": "Issuer" },
+          "url": { "type": "string", "format": "uri", "title": "Credential URL" }
+        }
+      }
     },
     "schema": {
       "type": "object",

@@ -55,10 +55,7 @@ jobs:
         run: echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
 
       - name: Build Resume
-        run: |
-          docker run --rm -v "${{ github.workspace }}:/data" \
-            ghcr.io/${{ github.repository_owner }}/latex-builder \
-            -jobname="Aditya_SWE_Resume_2YOE" main.tex
+        run: make compile
 
       - name: Generate changelog
         id: changelog
@@ -76,7 +73,7 @@ jobs:
       - name: Get PDF size
         id: meta
         run: |
-          SIZE=$(du -sh Aditya_SWE_Resume_2YOE.pdf | cut -f1)
+          SIZE=$(du -sh build/Sushant_Kadam.pdf | cut -f1)
           echo "size=$SIZE" >> $GITHUB_OUTPUT
 
       - name: Create Release
@@ -99,7 +96,7 @@ jobs:
             ```
             ${{ steps.changelog.outputs.log }}
             ```
-          files: Aditya_SWE_Resume_2YOE.pdf
+          files: build/Sushant_Kadam.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
           generate_release_notes: true
           make_latest: true

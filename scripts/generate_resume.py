@@ -11,14 +11,29 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "resume.yaml"
-SECTIONS_DIR = ROOT / "sections"
-GENERATED_DIR = ROOT / "generated"
+DATA_DIR = ROOT / "data"
+TEX_DIR = ROOT / "tex"
+SOURCE = DATA_DIR / "resume.yaml"
+SECTIONS_DIR = TEX_DIR / "sections"
+GENERATED_DIR = TEX_DIR / "generated"
 
 
 def load_resume_data() -> dict:
+    source_text = SOURCE.read_text(encoding="utf-8")
+    try:
+        return json.loads(source_text)
+    except json.JSONDecodeError:
+        pass
+
+    try:
+        import yaml
+
+        return yaml.safe_load(source_text)
+    except ModuleNotFoundError:
+        pass
+
     if shutil.which("yq") is None:
-        raise RuntimeError("yq is required to parse resume.yaml. Install yq and rerun make generate.")
+        raise RuntimeError("Install PyYAML or yq to parse resume.yaml, then rerun make generate.")
 
     result = subprocess.run(
         ["yq", "-o=json", str(SOURCE)],
@@ -43,15 +58,16 @@ def run_git(args: list[str]) -> str | None:
 
 
 def source_last_modified() -> str:
+    source_path = SOURCE.relative_to(ROOT).as_posix()
     diff_exit = subprocess.run(
-        ["git", "diff", "--quiet", "--", str(SOURCE.name)],
+        ["git", "diff", "--quiet", "--", source_path],
         cwd=ROOT,
         check=False,
     ).returncode
     if diff_exit == 1:
         return date.today().isoformat()
 
-    commit_date = run_git(["log", "-1", "--format=%cs", "--", SOURCE.name])
+    commit_date = run_git(["log", "-1", "--format=%cs", "--", source_path])
     if commit_date:
         return commit_date
 
@@ -98,7 +114,11 @@ def render_inline_markup(value: str) -> str:
         italic_text = match.group(5)
 
         if link_label is not None and link_url is not None:
-            parts.append(rf"\projectlink{{{link_url}}}{{{tex_escape(link_label)}}}")
+            if link_label.startswith("**") and link_label.endswith("**"):
+                label = rf"\textbf{{{tex_escape(link_label[2:-2])}}}"
+            else:
+                label = tex_escape(link_label)
+            parts.append(rf"\projectlink{{{link_url}}}{{{label}}}")
         elif bold_text is not None:
             parts.append(rf"\textbf{{{tex_escape(bold_text)}}}")
         elif italic_text is not None:
@@ -119,31 +139,40 @@ def write_file(path: Path, content: str) -> None:
 
 def render_header(data: dict) -> str:
     basics = data["basics"]
-    location = tex_escape(basics["location"]["display"])
     email = basics["email"]
     phone = basics["phone"]
-    contact = " | ".join(
-        [
-            location,
-            rf"\href{{mailto:{email}}}{{{tex_escape(email)}}}",
-            rf"\href{{{phone['url']}}}{{{tex_escape(phone['display'])}}}",
-        ]
+    location = tex_escape(basics["location"]["display"])
+    profile_links = [rf"\href{{mailto:{email}}}{{{tex_escape(email)}}}"]
+    profile_links.extend(
+        rf"\href{{{profile['url']}}}{{{tex_escape(profile['url'].removeprefix('https://'))}}}"
+        for profile in basics["profiles"]
     )
-    profiles = " | ".join(
-        rf"\href{{{profile['url']}}}{{{tex_escape(profile['label'])}}}" for profile in basics["profiles"]
-    )
+    profile_line = r" \\ ".join(profile_links)
     return "\n".join(
         [
             "% Generated from resume.yaml. Do not edit directly.",
-            rf"\resumeName{{{tex_escape(basics['name'])}}}",
-            rf"\resumeContactLine{{{contact}}}",
-            rf"\resumeProfileLinks{{{profiles}}}",
+            rf"\name{{{tex_escape(basics['name'])}}}",
+            rf"\address{{{tex_escape(phone['display'])} \\ {location}}}",
+            rf"\address{{{profile_line}}}",
+        ]
+    )
+
+
+def render_summary(data: dict) -> str:
+    return "\n".join(
+        [
+            "% Generated from resume.yaml. Do not edit directly.",
+            r"\begin{rSection}{SUMMARY}",
+            "",
+            render_inline_markup(data["basics"]["summary"]),
+            "",
+            r"\end{rSection}",
         ]
     )
 
 
 def render_experience(data: dict) -> str:
-    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\resumesection{EXPERIENCE}", ""]
+    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\begin{rSection}{EXPERIENCE}", ""]
     for item in data["experience"]:
         date_display = f"{item['start_display']} -- {item['end_display']}"
         lines.append(
@@ -152,56 +181,75 @@ def render_experience(data: dict) -> str:
         for bullet in item["bullets"]:
             lines.append(f"  \\item {render_inline_markup(bullet)}")
         lines.extend([r"\experienceentryend", ""])
+    lines.append(r"\end{rSection}")
     return "\n".join(lines)
 
 
 def render_skills(data: dict) -> str:
     skills = data["skills"]
-    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\resumesection{SKILLS}"]
-    for index, skill in enumerate(skills):
+    lines = [
+        "% Generated from resume.yaml. Do not edit directly.",
+        r"\begin{rSection}{SKILLS}",
+        "",
+        r"\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }",
+    ]
+    for skill in skills:
         label = tex_escape(skill["name"])
         keywords = tex_escape(", ".join(skill["keywords"]))
-        if index < len(skills) - 1:
-            lines.append(rf"\skillline{{{label}}}{{{keywords}}}")
-            lines.append(r"\vspace{2pt}")
-        else:
-            lines.append(rf"\textbf{{{label}:}} {keywords}")
+        lines.append(rf"{label} & {keywords} \\")
+    lines.extend([r"\end{tabular}", "", r"\end{rSection}"])
     return "\n".join(lines)
 
 
 def render_projects(data: dict) -> str:
-    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\resumesection{PROJECTS}", ""]
+    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\begin{rSection}{PROJECTS}", ""]
     for item in data["projects"]:
-        tech_stack = tex_escape(", ".join(item["keywords"]))
+        project_url = item["url"] if item["link_label"] else ""
         lines.append(
-            rf"\projectentry{{{tex_escape(item['name'])}}}{{{tech_stack}}}{{{item['url']}}}{{{tex_escape(item['link_label'])}}}"
+            rf"\projectentry{{{tex_escape(item['name'])}}}{{}}{{{project_url}}}{{{tex_escape(item['link_label'])}}}"
         )
         for bullet in item["bullets"]:
             lines.append(f"  \\item {render_inline_markup(bullet)}")
         lines.extend([r"\projectentryend", ""])
+    lines.append(r"\end{rSection}")
     return "\n".join(lines)
 
 
 def render_education(data: dict) -> str:
-    item = data["education"][0]
-    return "\n".join(
-        [
-            "% Generated from resume.yaml. Do not edit directly.",
-            r"\resumesection{EDUCATION}",
-            rf"\educationentry{{{tex_escape(item['institution'])}}}{{{tex_escape(item['short_study_type'])} in {tex_escape(item['area'])}}}{{{tex_escape(item['display'])}}}",
-        ]
-    )
+    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\begin{rSection}{EDUCATION}", ""]
+    for item in data["education"]:
+        lines.append(
+            rf"\educationentry{{{tex_escape(item['institution'])}}}{{{tex_escape(item['short_study_type'])} in {tex_escape(item['area'])}}}{{{tex_escape(item['start_date'])} - {tex_escape(item['end_date'])}}}{{{tex_escape(item['score'])}}}"
+        )
+        lines.append("")
+    lines.append(r"\end{rSection}")
+    return "\n".join(lines)
+
+
+def render_certifications(data: dict) -> str:
+    if not data["certifications"]:
+        return "% Generated from resume.yaml. Do not edit directly.\n"
+    lines = ["% Generated from resume.yaml. Do not edit directly.", r"\begin{rSection}{CERTIFICATIONS}", ""]
+    for item in data["certifications"]:
+        lines.append(
+            rf"\certificationentry{{{tex_escape(item['name'])}}}{{{tex_escape(item['issuer'])}}}{{{item['url']}}}"
+        )
+    lines.append(r"\end{rSection}")
+    return "\n".join(lines)
 
 
 def render_achievements(data: dict) -> str:
+    if not data["achievements"]:
+        return "% Generated from resume.yaml. Do not edit directly.\n"
     lines = [
         "% Generated from resume.yaml. Do not edit directly.",
-        r"\resumesection{ACHIEVEMENTS}",
+        r"\begin{rSection}{ACHIEVEMENTS}",
         r"\begin{itemize}",
     ]
     for item in data["achievements"]:
         lines.append(f"  \\item {render_inline_markup(item)}")
     lines.append(r"\end{itemize}")
+    lines.append(r"\end{rSection}")
     return "\n".join(lines)
 
 
@@ -283,6 +331,7 @@ def build_resume_json(data: dict, last_modified: str) -> dict:
         "education": [],
         "skills": [],
         "projects": [],
+        "certificates": [],
         "meta": {
             "canonical": data["meta"]["canonical"],
             "version": data["meta"]["version"],
@@ -326,6 +375,15 @@ def build_resume_json(data: dict, last_modified: str) -> dict:
                 "url": item["url"],
                 "roles": item["roles"],
                 "keywords": item["keywords"],
+            }
+        )
+
+    for item in data["certifications"]:
+        resume["certificates"].append(
+            {
+                "name": item["name"],
+                "issuer": item["issuer"],
+                "url": item["url"],
             }
         )
 
@@ -492,6 +550,24 @@ def build_schema_json(data: dict, last_modified: str) -> dict:
                             for index, item in enumerate(data["projects"], start=1)
                         ],
                     },
+                    {
+                        "@type": "ItemList",
+                        "name": "Certifications",
+                        "alternateName": [
+                            "Certificates",
+                            "Professional Certifications",
+                            "Credentials",
+                        ],
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": index,
+                                "name": f"{item['name']} - {item['issuer']}",
+                                "url": item["url"],
+                            }
+                            for index, item in enumerate(data["certifications"], start=1)
+                        ],
+                    },
                 ],
             },
         ]
@@ -503,14 +579,16 @@ def main() -> int:
     last_modified = source_last_modified()
 
     write_file(SECTIONS_DIR / "header.tex", render_header(data))
+    write_file(SECTIONS_DIR / "summary.tex", render_summary(data))
     write_file(SECTIONS_DIR / "experience.tex", render_experience(data))
     write_file(SECTIONS_DIR / "skills.tex", render_skills(data))
     write_file(SECTIONS_DIR / "projects.tex", render_projects(data))
+    write_file(SECTIONS_DIR / "certifications.tex", render_certifications(data))
     write_file(SECTIONS_DIR / "education.tex", render_education(data))
     write_file(SECTIONS_DIR / "achievements.tex", render_achievements(data))
     write_file(GENERATED_DIR / "metadata.tex", render_metadata(data))
-    write_file(ROOT / "resume.json", json.dumps(build_resume_json(data, last_modified), indent=2))
-    write_file(ROOT / "schema.json", json.dumps(build_schema_json(data, last_modified), indent=2))
+    write_file(DATA_DIR / "resume.json", json.dumps(build_resume_json(data, last_modified), indent=2))
+    write_file(DATA_DIR / "schema.json", json.dumps(build_schema_json(data, last_modified), indent=2))
 
     return 0
 

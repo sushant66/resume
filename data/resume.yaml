@@ -1,0 +1,281 @@
+{
+  "achievements": [],
+  "certifications": [
+    {
+      "issuer": "Coursera",
+      "name": "Python for Everybody Specialization",
+      "url": "https://www.coursera.org/account/accomplishments/specialization/FZEBLN392HNZ"
+    },
+    {
+      "issuer": "Amazon Web Services",
+      "name": "AWS Certified Cloud Practitioner",
+      "url": "https://www.credly.com/badges/496a3435-e62b-441c-a369-14c773a03e09/public_url"
+    },
+    {
+      "issuer": "Cutshort",
+      "name": "Cutshort Certified Python - Advanced",
+      "url": "https://cutshort.io/certificate/72378"
+    },
+    {
+      "issuer": "Coursera",
+      "name": "Machine Learning",
+      "url": "https://www.coursera.org/account/accomplishments/verify/3B2L83GL6TWQ"
+    }
+  ],
+  "basics": {
+    "email": "kadam.sushant@yahoo.com",
+    "label": "Senior Backend Engineer",
+    "location": {
+      "city": "Mumbai",
+      "country_code": "IN",
+      "country_name": "India",
+      "display": "Mumbai, India",
+      "pdf_display": "Mumbai - Maharashtra - India",
+      "region": "Maharashtra"
+    },
+    "name": "Sushant Kadam",
+    "phone": {
+      "display": "+91 8898377751",
+      "url": "tel://+918898377751"
+    },
+    "profiles": [
+      {
+        "label": "LinkedIn",
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/sushant66",
+        "username": "sushant66"
+      },
+      {
+        "label": "GitHub",
+        "network": "GitHub",
+        "url": "https://github.com/sushant66",
+        "username": "sushant66"
+      }
+    ],
+    "summary": "Senior Backend Engineer with 5+ years of experience building 0 to 1 products and scaling distributed systems. Designed and operated microservices handling 100K+ daily transactions and built AI-powered applications using LLMs in production. Strong experience in end-to-end ownership, from architecture design to deployment and scaling.",
+    "website": "https://github.com/sushant66"
+  },
+  "education": [
+    {
+      "area": "Electronics Engineering",
+      "display": "CGPA: 9.26/10 | 2018 - 2021",
+      "end_date": "2021",
+      "institution": "Sardar Patel Institute of Technology (SPIT)",
+      "score": "9.26/10 CGPA",
+      "short_study_type": "B.Tech",
+      "start_date": "2018",
+      "study_type": "Bachelor of Technology",
+      "url": null
+    },
+    {
+      "area": "Electronics Engineering",
+      "display": "Grade: 89.40/100 | 2015 - 2018",
+      "end_date": "2018",
+      "institution": "Veermata Jijabai Technological Institute (VJTI)",
+      "score": "89.40/100",
+      "short_study_type": "Diploma",
+      "start_date": "2015",
+      "study_type": "Diploma",
+      "url": null
+    }
+  ],
+  "experience": [
+    {
+      "alternate_names": ["Senior Backend Engineer", "Backend Engineer", "AI Engineer"],
+      "bullets": [
+        "Built and scaled microservices-based backend systems, improving modularity and enabling faster feature development.",
+        "Built scalable data ingestion pipelines using Python and Scrapy, automating manufacturer onboarding and eliminating manual workflows.",
+        "Optimized frontend-backend data flow and caching mechanisms, reducing page load time by **90%**.",
+        "Designed state-based workflow orchestration for dependent tasks, reducing development-to-production cycle time by **50%**.",
+        "Built an **LLM-powered** Reddit analysis platform using async pipelines, processing **10K+ posts/day** and generating actionable insights.",
+        "Designed and productionized an AI-based diagram generation SaaS, enabling automated diagram creation at scale.",
+        "Improved reliability of AI-generated outputs by optimizing LLM orchestration and backend pipelines.",
+        "Delivered an AI-assisted internal POC in **2 weeks**, accelerating development timelines significantly."
+      ],
+      "company": "EDRA LABS (BrowserStack Company)",
+      "end_date": null,
+      "end_display": "Present",
+      "location": {
+        "city": "Mumbai",
+        "country": "India",
+        "display": "Mumbai, India",
+        "region": "Maharashtra"
+      },
+      "position": "Senior Software Engineer",
+      "start_date": "2024-10",
+      "start_display": "Oct 2024",
+      "url": null
+    },
+    {
+      "alternate_names": ["Software Development Engineer", "Backend Engineer"],
+      "bullets": [
+        "Developed backend services for an Order Management System handling **100K+ daily orders** and **200K+ peak traffic**.",
+        "Built distributed read/write microservices, improving system reliability and reducing latency in order processing.",
+        "Designed **event-driven architecture** for order lifecycle management, ensuring high availability during peak load.",
+        "Built return quality check workflows, reducing fraudulent returns by **20%**.",
+        "Implemented Buy Online Pickup In Store (BOPIS) workflows, reducing delivery costs and improving fulfillment efficiency."
+      ],
+      "company": "FYND (Jio)",
+      "end_date": "2024-09",
+      "end_display": "Sep 2024",
+      "location": {
+        "city": "Mumbai",
+        "country": "India",
+        "display": "Mumbai, India",
+        "region": "Maharashtra"
+      },
+      "position": "Software Development Engineer - 1",
+      "start_date": "2023-03",
+      "start_display": "Mar 2023",
+      "url": null
+    },
+    {
+      "alternate_names": ["Product Engineer", "Backend Engineer"],
+      "bullets": [
+        "Built backend services for an Intelligent Document Processing platform, improving processing throughput and scalability.",
+        "Developed document parsing and text extraction pipelines integrating OCR systems (Google Vision, AWS Textract, Kofax, Tesseract).",
+        "Designed database schemas and REST APIs supporting high-throughput document workflows.",
+        "Built tabular data extraction module, improving accuracy by **25%** and reducing false positives by **30%**."
+      ],
+      "company": "LTIMindtree",
+      "end_date": "2023-02",
+      "end_display": "Feb 2023",
+      "location": {
+        "city": "Mumbai",
+        "country": "India",
+        "display": "Mumbai, India",
+        "region": "Maharashtra"
+      },
+      "position": "Senior Product Engineer",
+      "start_date": "2021-06",
+      "start_display": "Jun 2021",
+      "url": null
+    }
+  ],
+  "meta": {
+    "canonical": "https://github.com/sushant66/resume",
+    "created_year": 2026,
+    "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "version": "v1.0.0"
+  },
+  "pdf": {
+    "creator": "pdflatex",
+    "keywords": [
+      "Sushant Kadam",
+      "Senior Backend Engineer",
+      "Backend Engineer",
+      "Software Engineer",
+      "Python",
+      "JavaScript",
+      "SQL",
+      "FastAPI",
+      "Flask",
+      "Django",
+      "Node.js",
+      "Kafka",
+      "Redis",
+      "Celery",
+      "RabbitMQ",
+      "AWS",
+      "GCP",
+      "Docker",
+      "Kubernetes",
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "OpenAI",
+      "Claude",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Mumbai",
+      "India",
+      "BrowserStack",
+      "EDRA LABS",
+      "FYND",
+      "Jio",
+      "LTIMindtree",
+      "sushant66"
+    ],
+    "lang": "en-US",
+    "producer": "Sushant Kadam",
+    "pubtype": "other",
+    "subject": "Senior Backend Engineer Resume - Python, Distributed Systems, AI Products, LLMs, Backend"
+  },
+  "projects": [
+    {
+      "bullets": [
+        "Built an end-to-end **LLM-powered** SaaS, owning full-stack development using **React (Vite)** and **FastAPI**.",
+        "Designed backend APIs and prompt orchestration pipelines using **LangChain**, enabling automated diagram generation workflows.",
+        "Integrated the product as a [**ChatGPT application**](https://chatgpt.com/apps/make-a-viz/asdk_app_69463c3af6a48191aef5c21055cd32bf) and deployed with production-grade observability using **SigNoz**.",
+        "Built scalable generation workflows and owned the system end-to-end, including architecture, deployment, and monitoring."
+      ],
+      "keywords": ["React", "Vite", "FastAPI", "LangChain", "LLMs", "SigNoz"],
+      "link_label": "Live",
+      "name": "Make A Viz - AI Diagram Generation SaaS",
+      "roles": ["Creator"],
+      "url": "https://makeaviz.com/"
+    },
+    {
+      "bullets": [
+        "Built a scalable data pipeline to scrape and process **10K+ posts/day** using Python and async workflows.",
+        "Developed **LLM-based analysis pipelines** to generate actionable insights for business and strategy teams.",
+        "Designed the system for scalable ingestion, processing, and real-time insight generation."
+      ],
+      "keywords": ["Python", "Async", "LLMs", "Data Pipelines"],
+      "link_label": "",
+      "name": "AI Reddit Intelligence Platform",
+      "roles": ["Creator"],
+      "url": "https://github.com/sushant66"
+    },
+    {
+      "bullets": [
+        "Contributed across **frontend (React)** and **backend (FastAPI)** for an **LLM-driven** slide generation platform.",
+        "Built and enhanced **agentic workflows**, enabling users to edit slides through conversational interactions.",
+        "Developed export functionality supporting **PPTX and PDF**, improving usability for real-world workflows.",
+        "Implemented sharing features with **view/edit access control**, enabling collaborative usage.",
+        "Improved reliability and performance by optimizing LLM orchestration and backend pipelines."
+      ],
+      "keywords": ["React", "FastAPI", "LLMs", "Agentic Workflows", "PPTX", "PDF"],
+      "link_label": "Live",
+      "name": "Havi.ai - AI Slide Generation Platform",
+      "roles": ["Contributor"],
+      "url": "https://www.havi.ai/"
+    }
+  ],
+  "schema": {
+    "additional_knows_about": ["LLMs", "RAG", "Distributed Systems"],
+    "person_id": "https://github.com/sushant66",
+    "resume_id": "https://github.com/sushant66/resume"
+  },
+  "skills": [
+    {
+      "keywords": ["Python", "JavaScript", "SQL", "HTML", "CSS"],
+      "name": "Languages"
+    },
+    {
+      "keywords": ["React", "Vite", "Next JS"],
+      "name": "Frontend"
+    },
+    {
+      "keywords": ["FastAPI", "Flask", "Django", "Node.js"],
+      "name": "Backend"
+    },
+    {
+      "keywords": ["Kafka", "Redis", "Celery", "RabbitMQ"],
+      "name": "Systems"
+    },
+    {
+      "keywords": ["AWS", "GCP", "Docker", "Kubernetes"],
+      "name": "Cloud"
+    },
+    {
+      "keywords": ["LangChain", "LangGraph", "RAG", "OpenAI", "Claude"],
+      "name": "AI/LLM"
+    },
+    {
+      "keywords": ["PostgreSQL", "MySQL", "MongoDB"],
+      "name": "Databases"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sushant Kadam",
+    "label": "Senior Backend Engineer",
+    "email": "kadam.sushant@yahoo.com",
+    "url": "https://github.com/sushant66",
+    "summary": "Senior Backend Engineer with 5+ years of experience building 0 to 1 products and scaling distributed systems. Designed and operated microservices handling 100K+ daily transactions and built AI-powered applications using LLMs in production. Strong experience in end-to-end ownership, from architecture design to deployment and scaling.",
+    "location": {
+      "city": "Mumbai",
+      "region": "Maharashtra",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "sushant66",
+        "url": "https://linkedin.com/in/sushant66"
+      },
+      {
+        "network": "GitHub",
+        "username": "sushant66",
+        "url": "https://github.com/sushant66"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "EDRA LABS (BrowserStack Company)",
+      "position": "Senior Software Engineer",
+      "startDate": "2024-10",
+      "location": "Mumbai, Maharashtra, India"
+    },
+    {
+      "name": "FYND (Jio)",
+      "position": "Software Development Engineer - 1",
+      "startDate": "2023-03",
+      "location": "Mumbai, Maharashtra, India",
+      "endDate": "2024-09"
+    },
+    {
+      "name": "LTIMindtree",
+      "position": "Senior Product Engineer",
+      "startDate": "2021-06",
+      "location": "Mumbai, Maharashtra, India",
+      "endDate": "2023-02"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Sardar Patel Institute of Technology (SPIT)",
+      "area": "Electronics Engineering",
+      "studyType": "Bachelor of Technology",
+      "score": "9.26/10 CGPA",
+      "startDate": "2018",
+      "endDate": "2021"
+    },
+    {
+      "institution": "Veermata Jijabai Technological Institute (VJTI)",
+      "area": "Electronics Engineering",
+      "studyType": "Diploma",
+      "score": "89.40/100",
+      "startDate": "2015",
+      "endDate": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": [
+        "Python",
+        "JavaScript",
+        "SQL",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "Vite",
+        "Next JS"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "FastAPI",
+        "Flask",
+        "Django",
+        "Node.js"
+      ]
+    },
+    {
+      "name": "Systems",
+      "keywords": [
+        "Kafka",
+        "Redis",
+        "Celery",
+        "RabbitMQ"
+      ]
+    },
+    {
+      "name": "Cloud",
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "name": "AI/LLM",
+      "keywords": [
+        "LangChain",
+        "LangGraph",
+        "RAG",
+        "OpenAI",
+        "Claude"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Make A Viz - AI Diagram Generation SaaS",
+      "url": "https://makeaviz.com/",
+      "roles": [
+        "Creator"
+      ],
+      "keywords": [
+        "React",
+        "Vite",
+        "FastAPI",
+        "LangChain",
+        "LLMs",
+        "SigNoz"
+      ]
+    },
+    {
+      "name": "AI Reddit Intelligence Platform",
+      "url": "https://github.com/sushant66",
+      "roles": [
+        "Creator"
+      ],
+      "keywords": [
+        "Python",
+        "Async",
+        "LLMs",
+        "Data Pipelines"
+      ]
+    },
+    {
+      "name": "Havi.ai - AI Slide Generation Platform",
+      "url": "https://www.havi.ai/",
+      "roles": [
+        "Contributor"
+      ],
+      "keywords": [
+        "React",
+        "FastAPI",
+        "LLMs",
+        "Agentic Workflows",
+        "PPTX",
+        "PDF"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Python for Everybody Specialization",
+      "issuer": "Coursera",
+      "url": "https://www.coursera.org/account/accomplishments/specialization/FZEBLN392HNZ"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "url": "https://www.credly.com/badges/496a3435-e62b-441c-a369-14c773a03e09/public_url"
+    },
+    {
+      "name": "Cutshort Certified Python - Advanced",
+      "issuer": "Cutshort",
+      "url": "https://cutshort.io/certificate/72378"
+    },
+    {
+      "name": "Machine Learning",
+      "issuer": "Coursera",
+      "url": "https://www.coursera.org/account/accomplishments/verify/3B2L83GL6TWQ"
+    }
+  ],
+  "meta": {
+    "canonical": "https://github.com/sushant66/resume",
+    "version": "v1.0.0",
+    "lastModified": "2026-04-30"
+  }
+}

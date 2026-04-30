@@ -43,6 +43,9 @@
 ## Build tool directories for auxiliary files
 # latexrun
 latex.out/
+build/
+__pycache__/
+scripts/__pycache__/
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms

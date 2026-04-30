@@ -1,4 +1,4 @@
-# Aditya Jindal Resume
+# Sushant Kadam Resume
 
 This repository contains my resume in TeX, with a YAML source-of-truth layer that generates both the visible resume sections and the embedded metadata files.
 
@@ -11,7 +11,7 @@ If you are using this repository for the first time, start with the user-facing 
 For the resume build pipeline:
 
 - [Docker](https://docs.docker.com/)
-- [yq](https://github.com/mikefarah/yq)
+- [yq](https://github.com/mikefarah/yq) or PyYAML
 
 For local git-based push from the editor:
 
@@ -23,13 +23,13 @@ For running the editor without Docker Compose:
 
 ## Contents
 
-- [`main.tex`](./main.tex): The main TeX file for the resume.
-- [`formatting.sty`](./formatting.sty): The shared style file for formatting and PDF metadata support.
-- [`resume.yaml`](./resume.yaml): The single source of truth for resume content and metadata.
-- [`scripts/generate_resume.py`](./scripts/generate_resume.py): Generates LaTeX partials and embedded JSON files from [`resume.yaml`](./resume.yaml).
-- [`sections/`](./sections/): Generated TeX files for each resume section.
-- [`schema.json`](./schema.json): Schema.org JSON-LD structured data embedded in the PDF.
-- [`resume.json`](./resume.json): JSON Resume structured data embedded in the PDF for ATS parsers.
+- [`tex/main.tex`](./tex/main.tex): The main TeX file for the resume.
+- [`tex/resume.cls`](./tex/resume.cls): The resume class used by the Overleaf-compatible layout.
+- [`resume.yaml`](./data/resume.yaml): The single source of truth for resume content and metadata.
+- [`scripts/generate_resume.py`](./scripts/generate_resume.py): Generates LaTeX partials and embedded JSON files from [`resume.yaml`](./data/resume.yaml).
+- [`tex/sections/`](./tex/sections/): Generated TeX files for each resume section.
+- [`schema.json`](./data/schema.json): Schema.org JSON-LD structured data embedded in the PDF.
+- [`resume.json`](./data/resume.json): JSON Resume structured data embedded in the PDF for ATS parsers.
 
 > [!NOTE]
 > This repository uses a custom Docker image for compiling the resume, ensuring consistency and reproducibility across environments.
@@ -39,13 +39,13 @@ For running the editor without Docker Compose:
 <p>1. <strong>Clone the repository</strong>:</p>
 
 ```sh
-git clone git@github.com:adityaongit/resume.git
+git clone git@github.com:sushant66/resume.git
 ```
 
 Or via HTTPS:
 
 ```sh
-git clone https://github.com/adityaongit/resume.git
+git clone https://github.com/sushant66/resume.git
 ```
 
 <p>2. <strong>Build the Docker image</strong>:</p>
@@ -63,7 +63,7 @@ make generate
 <p>4. <strong>Compile the resume</strong>:</p>
 
 ```sh
-docker run --rm -v "$(pwd):/data" latex-builder -jobname="Aditya_SWE_Resume_2YOE" main.tex
+docker run --rm -v "$(pwd):/data" -w /data/tex latex-builder -output-directory=/data/build -jobname="Sushant_Kadam" main.tex
 ```
 
 You can also use:
@@ -77,7 +77,7 @@ make compile
 
 ## Web Editor
 
-This repository now includes a local web editor for updating [`resume.yaml`](./resume.yaml), generating the derived artifacts, previewing the compiled PDF, and pushing a versioned commit.
+This repository now includes a local web editor for updating [`resume.yaml`](./data/resume.yaml), generating the derived artifacts, previewing the compiled PDF, and pushing a versioned commit.
 
 ### Docker Compose
 
@@ -104,7 +104,7 @@ Use this if you want to run the Flask server directly on your machine.
 
 ```sh
 uv --version
-yq --version
+python3 scripts/generate_resume.py
 docker --version
 ```
 
@@ -133,7 +133,7 @@ Then open:
 http://127.0.0.1:5000
 ```
 
-The backend uses the existing `make generate` and `make compile` flow, so Docker and `yq` are still required even when the web server itself runs outside Docker.
+The backend uses the existing `make generate` and `make compile` flow, so Docker is still required for PDF compilation even when the web server itself runs outside Docker.
 
 ### Optional GitHub Env Push Mode
 
@@ -141,7 +141,7 @@ If you want the app to push from a container or from an environment without loca
 
 ```sh
 export GITHUB_TOKEN=...
-export GITHUB_OWNER=adityaongit
+export GITHUB_OWNER=sushant66
 export GITHUB_REPO=resume
 export GITHUB_BRANCH=main
 ```
@@ -166,7 +166,7 @@ Shows the available targets.
 make generate
 ```
 
-Regenerates the TeX partials and JSON metadata from [`resume.yaml`](./resume.yaml).
+Regenerates the TeX partials and JSON metadata from [`resume.yaml`](./data/resume.yaml).
 
 ```sh
 make docker
@@ -212,21 +212,21 @@ The compiled PDF contains embedded metadata across multiple standards, making it
 Verify the PDF metadata after compiling:
 
 ```sh
-exiftool -xmp:all Aditya_SWE_Resume_2YOE.pdf
+exiftool -xmp:all build/Sushant_Kadam.pdf
 ```
 
 List embedded attachments:
 
 ```sh
-pdfdetach -list Aditya_SWE_Resume_2YOE.pdf
+pdfdetach -list build/Sushant_Kadam.pdf
 ```
 
 ## Customization
 
-- **Content**: Update [`resume.yaml`](./resume.yaml).
-- **Formatting**: Modify [`formatting.sty`](./formatting.sty) to change appearance and layout.
-- **Document wiring**: [`main.tex`](./main.tex) controls section order and PDF attachments.
-- **Structured data**: [`resume.json`](./resume.json), [`schema.json`](./schema.json), and [`generated/metadata.tex`](./generated/metadata.tex) are generated from [`resume.yaml`](./resume.yaml).
+- **Content**: Update [`resume.yaml`](./data/resume.yaml).
+- **Formatting**: Modify [`tex/resume.cls`](./tex/resume.cls) to change appearance and layout.
+- **Document wiring**: [`main.tex`](./tex/main.tex) controls section order and PDF attachments.
+- **Structured data**: [`resume.json`](./data/resume.json), [`schema.json`](./data/schema.json), and [`generated/metadata.tex`](./tex/generated/metadata.tex) are generated from [`resume.yaml`](./data/resume.yaml).
 
 For step-by-step editing and verification instructions, see [`USER_GUIDE.md`](./USER_GUIDE.md).
 
@@ -235,7 +235,7 @@ For step-by-step editing and verification instructions, see [`USER_GUIDE.md`](./
 > [!IMPORTANT]
 > GitHub Actions automatically builds and releases the resume on every push to `main`.
 
-Download the latest compiled PDF from the [Releases](https://github.com/adityaongit/resume/releases/latest) page.
+Download the latest compiled PDF from the [Releases](https://github.com/sushant66/resume/releases/latest) page.
 
 ## License
 

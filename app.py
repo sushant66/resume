@@ -21,20 +21,25 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parent
-RESUME_YAML = ROOT / "resume.yaml"
-EDITOR_SCHEMA = ROOT / "editor_schema.json"
-PDF_PATH = ROOT / "Aditya_SWE_Resume_2YOE.pdf"
+DATA_DIR = ROOT / "data"
+TEX_DIR = ROOT / "tex"
+BUILD_DIR = ROOT / "build"
+RESUME_YAML = DATA_DIR / "resume.yaml"
+EDITOR_SCHEMA = DATA_DIR / "editor_schema.json"
+PDF_PATH = BUILD_DIR / "Sushant_Kadam.pdf"
 GENERATED_FILES = [
     RESUME_YAML.relative_to(ROOT).as_posix(),
-    "resume.json",
-    "schema.json",
-    "generated/metadata.tex",
-    "sections/header.tex",
-    "sections/experience.tex",
-    "sections/skills.tex",
-    "sections/projects.tex",
-    "sections/education.tex",
-    "sections/achievements.tex",
+    "data/resume.json",
+    "data/schema.json",
+    "tex/generated/metadata.tex",
+    "tex/sections/header.tex",
+    "tex/sections/summary.tex",
+    "tex/sections/experience.tex",
+    "tex/sections/skills.tex",
+    "tex/sections/projects.tex",
+    "tex/sections/certifications.tex",
+    "tex/sections/education.tex",
+    "tex/sections/achievements.tex",
 ]
 VERSION_RE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
 GITHUB_API_BASE = os.environ.get("GITHUB_API_BASE", "https://api.github.com")
@@ -445,8 +450,8 @@ def api_generate() -> Response:
         "logs": logs,
         "previewUrl": get_preview_url(),
         "artifacts": {
-            "resumeJson": (ROOT / "resume.json").exists(),
-            "schemaJson": (ROOT / "schema.json").exists(),
+            "resumeJson": (DATA_DIR / "resume.json").exists(),
+            "schemaJson": (DATA_DIR / "schema.json").exists(),
             "pdf": PDF_PATH.exists(),
         },
         "status": get_status_payload(),
