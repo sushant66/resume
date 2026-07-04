@@ -131,46 +131,30 @@
   ],
   "projects": [
     {
-      "name": "Make A Viz - AI Diagram Generation SaaS",
-      "url": "https://makeaviz.com/",
-      "roles": [
-        "Creator"
-      ],
-      "keywords": [
-        "React",
-        "Vite",
-        "FastAPI",
-        "LangChain",
-        "LLMs",
-        "SigNoz"
-      ]
-    },
-    {
-      "name": "AI Reddit Intelligence Platform",
+      "name": "LeetWhisper - AI Coding Mentor",
       "url": "https://github.com/sushant66",
       "roles": [
         "Creator"
       ],
       "keywords": [
-        "Python",
-        "Async",
+        "Chrome Extension",
+        "GPT-4",
+        "Gemini",
         "LLMs",
-        "Data Pipelines"
+        "JavaScript"
       ]
     },
     {
-      "name": "Havi.ai - AI Slide Generation Platform",
-      "url": "https://www.havi.ai/",
+      "name": "Gemini Desk - Web UI for Gemini CLI",
+      "url": "https://github.com/sushant66",
       "roles": [
-        "Contributor"
+        "Creator"
       ],
       "keywords": [
-        "React",
-        "FastAPI",
-        "LLMs",
-        "Agentic Workflows",
-        "PPTX",
-        "PDF"
+        "Gemini CLI",
+        "SQLite",
+        "Web UI",
+        "JavaScript"
       ]
     }
   ],
@@ -199,6 +183,6 @@
   "meta": {
     "canonical": "https://github.com/sushant66/resume",
     "version": "v1.0.0",
-    "lastModified": "2026-04-30"
+    "lastModified": "2026-07-04"
   }
 }

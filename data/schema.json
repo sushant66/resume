@@ -113,39 +113,25 @@
       "workExample": [
         {
           "@type": "SoftwareSourceCode",
-          "name": "Make A Viz - AI Diagram Generation SaaS",
-          "url": "https://makeaviz.com/",
-          "programmingLanguage": [
-            "React",
-            "Vite",
-            "FastAPI",
-            "LangChain",
-            "LLMs",
-            "SigNoz"
-          ]
-        },
-        {
-          "@type": "SoftwareSourceCode",
-          "name": "AI Reddit Intelligence Platform",
+          "name": "LeetWhisper - AI Coding Mentor",
           "url": "https://github.com/sushant66",
           "programmingLanguage": [
-            "Python",
-            "Async",
+            "Chrome Extension",
+            "GPT-4",
+            "Gemini",
             "LLMs",
-            "Data Pipelines"
+            "JavaScript"
           ]
         },
         {
           "@type": "SoftwareSourceCode",
-          "name": "Havi.ai - AI Slide Generation Platform",
-          "url": "https://www.havi.ai/",
+          "name": "Gemini Desk - Web UI for Gemini CLI",
+          "url": "https://github.com/sushant66",
           "programmingLanguage": [
-            "React",
-            "FastAPI",
-            "LLMs",
-            "Agentic Workflows",
-            "PPTX",
-            "PDF"
+            "Gemini CLI",
+            "SQLite",
+            "Web UI",
+            "JavaScript"
           ]
         }
       ],
@@ -274,17 +260,12 @@
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "Make A Viz - AI Diagram Generation SaaS"
+              "name": "LeetWhisper - AI Coding Mentor"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "AI Reddit Intelligence Platform"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Havi.ai - AI Slide Generation Platform"
+              "name": "Gemini Desk - Web UI for Gemini CLI"
             }
           ]
         },

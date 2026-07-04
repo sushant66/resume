@@ -83,11 +83,10 @@
     {
       "alternate_names": ["Senior Backend Engineer", "Backend Engineer", "AI Engineer"],
       "bullets": [
-        "Reduced page load time by **90%** by optimizing backend data flow and caching strategies.",
-        "Automated manufacturer onboarding by building Python-based ingestion pipelines, eliminating manual workflows.",
-        "Built async pipelines processing **10K+ posts/day** for **LLM-based** Reddit analysis and insight generation.",
-        "Designed workflow orchestration system, reducing development-to-production cycle time by **50%**.",
-        "Built and productionized an AI diagram generation SaaS, improving reliability of LLM outputs through orchestration and failure handling."
+        "Building **Havi.ai**, an **LLM-driven slide generation platform**, across **React** and **FastAPI**, developing **agentic workflows** for conversational slide editing, PPTX/PDF export, and share-based access control, reducing page load time by **90%** through backend and orchestration optimizations.",
+        "Built and productionized **Make A Viz**, an AI diagram-generation SaaS, owning full-stack development (**React**, **FastAPI**) and **LangChain**-based prompt orchestration; shipped it as a **ChatGPT app** with production observability via **SigNoz**.",
+        "Built async data pipelines processing **10K+ posts/day** for an **LLM-based Reddit intelligence platform**, generating actionable insights for business and strategy teams.",
+        "Automated manufacturer onboarding with Python-based data pipelines orchestrated in **Prefect**, eliminating manual workflows and reducing development-to-production cycle time by **50%**."
       ],
       "company": "EDRA LABS (BrowserStack Company)",
       "end_date": null,
@@ -202,42 +201,25 @@
   "projects": [
     {
       "bullets": [
-        "Built an end-to-end **LLM-powered** SaaS, owning full-stack development using **React (Vite)** and **FastAPI**.",
-        "Designed backend APIs and prompt orchestration pipelines using **LangChain**, enabling automated diagram generation workflows.",
-        "Integrated the product as a [**ChatGPT application**](https://chatgpt.com/apps/make-a-viz/asdk_app_69463c3af6a48191aef5c21055cd32bf) and deployed with production-grade observability using **SigNoz**.",
-        "Built scalable generation workflows and owned the system end-to-end, including architecture, deployment, and monitoring."
+        "Built a **Chrome extension** delivering personalized **AI coding mentorship** for LeetCode, with an adaptive hint system offering progressive guidance instead of direct answers.",
+        "Integrated **GPT-4** and **Gemini** for intelligent code review, bug detection, and optimization suggestions."
       ],
-      "keywords": ["React", "Vite", "FastAPI", "LangChain", "LLMs", "SigNoz"],
-      "link_label": "Live",
-      "name": "Make A Viz - AI Diagram Generation SaaS",
-      "roles": ["Creator"],
-      "url": "https://makeaviz.com/"
-    },
-    {
-      "bullets": [
-        "Built a scalable data pipeline to scrape and process **10K+ posts/day** using Python and async workflows.",
-        "Developed **LLM-based analysis pipelines** to generate actionable insights for business and strategy teams.",
-        "Designed the system for scalable ingestion, processing, and real-time insight generation."
-      ],
-      "keywords": ["Python", "Async", "LLMs", "Data Pipelines"],
-      "link_label": "",
-      "name": "AI Reddit Intelligence Platform",
+      "keywords": ["Chrome Extension", "GPT-4", "Gemini", "LLMs", "JavaScript"],
+      "link_label": "GitHub",
+      "name": "LeetWhisper - AI Coding Mentor",
       "roles": ["Creator"],
       "url": "https://github.com/sushant66"
     },
     {
       "bullets": [
-        "Contributed across **frontend (React)** and **backend (FastAPI)** for an **LLM-driven** slide generation platform.",
-        "Built and enhanced **agentic workflows**, enabling users to edit slides through conversational interactions.",
-        "Developed export functionality supporting **PPTX and PDF**, improving usability for real-world workflows.",
-        "Implemented sharing features with **view/edit access control**, enabling collaborative usage.",
-        "Improved reliability and performance by optimizing LLM orchestration and backend pipelines."
+        "Built a web interface for the **Gemini CLI** with a chat-based UI, project management, and context switching.",
+        "Implemented persistent **SQLite** storage and syntax-highlighted code rendering for a full-featured desktop-like experience."
       ],
-      "keywords": ["React", "FastAPI", "LLMs", "Agentic Workflows", "PPTX", "PDF"],
-      "link_label": "Live",
-      "name": "Havi.ai - AI Slide Generation Platform",
-      "roles": ["Contributor"],
-      "url": "https://www.havi.ai/"
+      "keywords": ["Gemini CLI", "SQLite", "Web UI", "JavaScript"],
+      "link_label": "GitHub",
+      "name": "Gemini Desk - Web UI for Gemini CLI",
+      "roles": ["Creator"],
+      "url": "https://github.com/sushant66"
     }
   ],
   "schema": {
