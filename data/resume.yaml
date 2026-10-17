@@ -83,10 +83,11 @@
     {
       "alternate_names": ["Senior Backend Engineer", "Backend Engineer", "AI Engineer"],
       "bullets": [
+        "Led the migration of an **AI sales copilot for Salesforce** serving **100+ enterprise users** from Chrome-extension logic to a dedicated **FastAPI** backend; bootstrapped the monorepo with **OpenTelemetry** observability, **LangGraph/LiteLLM** AI integrations, and a **PostgreSQL/Alembic** data layer.",
+        "Shaped the core architecture, introducing **Temporal** for durable workflow state and **Zero** (zero-cache) to push real-time updates to the frontend from a denormalized, read-only workspace table.",
+        "Designed and built the **AMA (Ask Me Anything) agent** from scratch, letting sales reps query accounts, opportunities, meetings, and Salesforce records in natural language with cited answers.",
         "Building **Havi.ai**, an **LLM-driven slide generation platform**, across **React** and **FastAPI**, developing **agentic workflows** for conversational slide editing, PPTX/PDF export, and share-based access control, reducing page load time by **90%** through backend and orchestration optimizations.",
-        "Built and productionized **Make A Viz**, an AI diagram-generation SaaS, owning full-stack development (**React**, **FastAPI**) and **LangChain**-based prompt orchestration; shipped it as a **ChatGPT app** with production observability via **SigNoz**.",
-        "Built async data pipelines processing **10K+ posts/day** for an **LLM-based Reddit intelligence platform**, generating actionable insights for business and strategy teams.",
-        "Automated manufacturer onboarding with Python-based data pipelines orchestrated in **Prefect**, eliminating manual workflows and reducing development-to-production cycle time by **50%**."
+        "Built and productionized **Make A Viz**, an AI diagram-generation SaaS, owning full-stack development (**React**, **FastAPI**) and **LangChain**-based prompt orchestration; shipped it as a **ChatGPT app** with production observability via **SigNoz**."
       ],
       "company": "EDRA LABS (BrowserStack Company)",
       "end_date": null,
