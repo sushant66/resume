@@ -242,7 +242,7 @@
       "name": "Backend"
     },
     {
-      "keywords": ["Kafka", "Redis", "Celery", "RabbitMQ"],
+      "keywords": ["Kafka", "Temporal", "Redis", "Celery", "RabbitMQ"],
       "name": "Systems"
     },
     {

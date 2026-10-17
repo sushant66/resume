@@ -96,6 +96,7 @@
       "name": "Systems",
       "keywords": [
         "Kafka",
+        "Temporal",
         "Redis",
         "Celery",
         "RabbitMQ"

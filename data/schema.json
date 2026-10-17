@@ -36,6 +36,7 @@
         "Django",
         "Node.js",
         "Kafka",
+        "Temporal",
         "Redis",
         "Celery",
         "RabbitMQ",
@@ -228,7 +229,7 @@
             {
               "@type": "ListItem",
               "position": 4,
-              "name": "Systems: Kafka, Redis, Celery, RabbitMQ"
+              "name": "Systems: Kafka, Temporal, Redis, Celery, RabbitMQ"
             },
             {
               "@type": "ListItem",
